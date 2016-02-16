@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" namespace="/" extends="struts-default">
+
+	<result-types>
+		<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"></result-type>
+	</result-types>
+	<action name="login" class="com.slms.webapp.controller.DashboardAction" method="login">
+		<result name="success">/view/jsp/pages/login.jsp</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">dashboard</param>
+		</result>
+	</action>
+	<action name="dashboard" class="com.slms.webapp.controller.DashboardAction">
+		<result name="success" type="tiles">/dashboard</result>
+		<result name="message">/view/jsp/pages/login.jsp</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="logout" class="com.slms.webapp.controller.DashboardAction" method="logout">
+		<result name="success">/view/jsp/pages/login.jsp</result>
+	</action>
+	<action name="courseManagement" class="com.slms.webapp.controller.CoursesAction">
+		<result name="success" type="tiles">/courseManagement</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="getCourses" class="com.slms.webapp.controller.CoursesAction" method="getCourses"/>
+	<action name="assignment" class="com.slms.webapp.controller.CoursesAction" method="assignment">
+		<result name="success" type="tiles">/assignment</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	
+	<action name="getOrgCourse" class="com.slms.webapp.controller.CoursesAction" method="getOrgCourse">
+	</action>
+	<action name="mapOrgCourse" class="com.slms.webapp.controller.CoursesAction" method="mapOrgCourse">
+		<result name="success" type="tiles">/courseManagement</result>
+	</action>
+	<action name="getAssignmentTable" class="com.slms.webapp.controller.CoursesAction" method="assignment">
+		<result name="success">/view/jsp/pages/assignmentTable.jsp</result>
+	</action>
+	<action name="module" class="com.slms.webapp.controller.CoursesAction" method="module">
+		<result name="success" type="tiles">/module</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="getModuleTable" class="com.slms.webapp.controller.CoursesAction" method="module">
+		<result name="success">/view/jsp/pages/moduleTable.jsp</result>
+	</action>
+	<action name="getModule" class="com.slms.webapp.controller.CoursesAction" method="getModule"/>
+	
+	<action name="saveCourse" class="com.slms.webapp.controller.CoursesAction" method="saveCourse">
+		<result name="success" type="tiles">/courseManagement</result>
+	</action>
+	<action name="getCourseTable" class="com.slms.webapp.controller.CoursesAction">
+		<result name="success">/view/jsp/pages/courseTable.jsp</result>
+	</action>
+	<action name="mapCourse" class="com.slms.webapp.controller.CoursesAction" method="mapCourse">
+		<result name="success" type="tiles">/courseManagement</result>
+	</action>
+	<action name="getCourseChoice" class="com.slms.webapp.controller.CoursesAction" method="getCourseChoice">
+		<result name="success">/view/jsp/pages/courseTable.jsp</result>
+	</action>
+	<action name="saveModule" class="com.slms.webapp.controller.CoursesAction" method="saveModule">
+		<result name="success">/view/jsp/pages/moduleTable.jsp</result>
+	</action>
+	<action name="updatModule" class="com.slms.webapp.controller.CoursesAction" method="updatModule">
+		<result name="success">/view/jsp/pages/moduleTable.jsp</result>
+	</action>
+	<action name="saveResource" class="com.slms.webapp.controller.CoursesAction" method="saveResource">
+		<result name="success" type="tiles">/courseManagement</result>
+	</action>
+	<action name="saveAssignment" class="com.slms.webapp.controller.CoursesAction" method="saveAssignment">
+		<result name="success">/view/jsp/pages/assignmentTable.jsp</result>
+	</action>
+	<action name="saveQuestion" class="com.slms.webapp.controller.CoursesAction" method="saveQuestion">
+		<result name="success">/view/jsp/pages/assignmentTable.jsp</result>
+	</action>
+	<action name="updateQuestion" class="com.slms.webapp.controller.CoursesAction" method="updateQuestion">
+		<result name="success">/view/jsp/pages/assignmentTable.jsp</result>
+	</action>
+	
+	
+	
+	<action name="updateAssignment" class="com.slms.webapp.controller.CoursesAction" method="updateAssignment">
+		<result name="success">/view/jsp/pages/assignmentTable.jsp</result>
+	</action>
+	<action name="organization" class="com.slms.webapp.controller.OrganizationAction">
+		<result name="success" type="tiles">/organizationManagement</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="saveOrganisation" class="com.slms.webapp.controller.OrganizationAction" method="saveOrganisation">
+		<result name="success" type="tiles">/organizationManagement</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	
+	<action name="department" class="com.slms.webapp.controller.OrganizationAction" method="department">
+		<result name="success" type="tiles">/departmentManagement</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="getdepartmentTable" class="com.slms.webapp.controller.OrganizationAction" method="department">
+		<result name="success">/view/jsp/pages/departmentTable.jsp</result>
+	</action>
+	<action name="saveDepartment" class="com.slms.webapp.controller.OrganizationAction" method="saveDepartment">
+		<result name="success">/view/jsp/pages/departmentTable.jsp</result>
+	</action>
+	<action name="getDepartmentContainer" class="com.slms.webapp.controller.OrganizationAction" method="getDepartmentContainer">
+		<result name="success">/view/jsp/pages/depContainerMap.jsp</result>
+	</action>
+	<action name="mapDepCourseContainer" class="com.slms.webapp.controller.OrganizationAction" method="mapDepCourseContainer">
+		<result name="success" type="tiles">/departmentManagement</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="group" class="com.slms.webapp.controller.OrganizationAction" method="group">
+		<result name="success" type="tiles">/groupManagement</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="getGroupTable" class="com.slms.webapp.controller.OrganizationAction" method="group">
+		<result name="success">/view/jsp/pages/groupTable.jsp</result>
+	</action>
+	<action name="saveGroup" class="com.slms.webapp.controller.OrganizationAction" method="saveGroup">
+		<result name="success" type="tiles">/groupManagement</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	
+	<action name="getDepartment" class="com.slms.webapp.controller.OrganizationAction" method="getDepartment"/>
+	
+	<action name="getGroups" class="com.slms.webapp.controller.OrganizationAction" method="getGroups"/>
+	<action name="teacherManagment" class="com.slms.webapp.controller.UserAction">
+		<result name="success" type="tiles">/teacherManagment</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="saveTeacher" class="com.slms.webapp.controller.UserAction" method="saveTeacher">
+		<result name="success">/view/jsp/pages/teacherManagment.jsp</result>
+	</action>
+	<action name="getCoachContainerDetail" class="com.slms.webapp.controller.UserAction" method="getCoachContainerDetail">
+		<result name="success">/view/jsp/pages/coachContainerDetail.jsp</result>
+	</action>
+	<action name="getTeacherChoice" class="com.slms.webapp.controller.UserAction" method="getTeacherChoice"/>
+	
+	<action name="mapTeacher" class="com.slms.webapp.controller.UserAction" method="mapTeacher">
+		<result name="success" type="tiles">/teacherManagment</result>
+	</action>
+	<action name="mapTeaherNewOrg" class="com.slms.webapp.controller.UserAction" method="mapTeaherNewOrg">
+		<result name="success" type="tiles">/teacherManagment</result>
+	</action>
+	<action name="getTeacherTable" class="com.slms.webapp.controller.UserAction">
+		<result name="success">/view/jsp/pages/teacherTable.jsp</result>
+	</action>
+	<action name="updateTeacher" class="com.slms.webapp.controller.UserAction" method="updateTeacher">
+		<result name="success">/view/jsp/pages/teacherTable.jsp</result>
+	</action>
+	<action name="changeTeacherStatus" class="com.slms.webapp.controller.UserAction" method="changeTeacherStatus">
+		<result name="success">/view/jsp/pages/teacherTable.jsp</result>
+	</action>
+	<action name="reviewParameter" class="com.slms.webapp.controller.OrganizationAction" method="reviewParameter">
+		<result name="success" type="tiles">/reviewParameter</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="saveParam" class="com.slms.webapp.controller.OrganizationAction" method="saveParam">
+		<result name="success" type="tiles">/reviewParameter</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="grade" class="com.slms.webapp.controller.OrganizationAction" method="grade">
+		<result name="success" type="tiles">/grade</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="saveGrade" class="com.slms.webapp.controller.OrganizationAction" method="saveGrade">
+		<result name="success" type="tiles">/grade</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="getParamValue" class="com.slms.webapp.controller.OrganizationAction" method="getParamValue">
+		<result name="success">/view/jsp/pages/reviewParameterTable.jsp</result>
+	</action>
+	
+	<action name="getReviewValue" class="com.slms.webapp.controller.OrganizationAction" method="getReviewValue"/>
+	
+	<action name="saveReviewParameter" class="com.slms.webapp.controller.OrganizationAction" method="saveReviewParameter">
+		<result name="success">/view/jsp/pages/reviewParameterTable.jsp</result>
+	</action>
+	
+	<action name="getReviewParamTable" class="com.slms.webapp.controller.OrganizationAction" method="reviewParameter">
+		<result name="success">/view/jsp/pages/reviewParameterTable.jsp</result>
+	</action>
+	
+	<action name="students" class="com.slms.webapp.controller.UserAction" method="students">
+		<result name="success" type="tiles">/students</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="mapStudToNewDep" class="com.slms.webapp.controller.UserAction" method="mapStudToNewDep">
+		<result name="success" type="tiles">/students</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="mapContainerToUser" class="com.slms.webapp.controller.UserAction" method="mapContainerToUser">
+		<result name="success" type="tiles">/students</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="mapStudnet" class="com.slms.webapp.controller.OrganizationAction" method="mapStudnet">
+		<result name="success" type="tiles">/mapStudent</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="saveStudent" class="com.slms.webapp.controller.UserAction" method="saveStudent">
+		<result name="success" type="tiles">/students</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="newRegistration" class="com.slms.webapp.controller.UserAction" method="newRegistration">
+		<result name="success" type="tiles">/newRegistration</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="changeNewUserStatus" class="com.slms.webapp.controller.UserAction" method="changeNewUserStatus">
+		<result name="success" type="tiles">/newRegistration</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="sessionRequest" class="com.slms.webapp.controller.UserAction" method="sessionRequest">
+		<result name="success" type="tiles">/sessionRequest</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="changeCourseReqStatus" class="com.slms.webapp.controller.UserAction" method="changeCourseReqStatus">
+		<result name="success" type="tiles">/sessionRequest</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="admins" class="com.slms.webapp.controller.AdminAction">
+		<result name="success" type="tiles">/admin</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="saveAdmin" class="com.slms.webapp.controller.AdminAction" method="saveAdmin">
+		<result name="success">/view/jsp/pages/adminTable.jsp</result>
+	</action>
+	<action name="updateAdmin" class="com.slms.webapp.controller.AdminAction" method="updateAdmin">
+		<result name="success">/view/jsp/pages/adminTable.jsp</result>
+	</action>
+	<action name="getAdminTable" class="com.slms.webapp.controller.AdminAction">
+		<result name="success">/view/jsp/pages/adminTable.jsp</result>
+	</action>
+	<action name="mapAdmin" class="com.slms.webapp.controller.AdminAction" method="mapAdmin">
+		<result name="success">/view/jsp/pages/adminTable.jsp</result>
+	</action>
+	<action name="changeAdminStatus" class="com.slms.webapp.controller.AdminAction" method="changeAdminStatus">
+		<result name="success">/view/jsp/pages/adminTable.jsp</result>
+	</action>
+	<action name="getStudentTable" class="com.slms.webapp.controller.UserAction" method="getStudentTable">
+		<result name="success">/view/jsp/pages/studentTable.jsp</result>
+	</action>
+	<action name="changeUserLoginStatus" class="com.slms.webapp.controller.UserAction" method="changeUserLoginStatus">
+		<result name="success">/view/jsp/pages/studentTable.jsp</result>
+	</action>
+	<action name="activeDeactive" class="com.slms.webapp.controller.OrganizationAction" method="activeDeactive">
+		<result name="org">/view/jsp/pages/organisationTable.jsp</result>
+		<result name="dep">/view/jsp/pages/departmentTable.jsp</result>
+		<result name="group">/view/jsp/pages/groupTable.jsp</result>
+	</action>
+	<action name="forgetPassword">
+		<result>/view/jsp/pages/forgetPassword.jsp</result>
+	</action>
+	<action name="sendforgetPassword" class="com.slms.webapp.controller.UserAction" method="sendforgetPassword">
+		<result name="success">/view/jsp/pages/forgetPassword.jsp</result>
+	</action>
+	<action name="courseActiveDeactive" class="com.slms.webapp.controller.CoursesAction" method="courseActiveDeactive">
+		<result name="course">/view/jsp/pages/courseTable.jsp</result>
+		<result name="module">/view/jsp/pages/moduleTable.jsp</result>
+		<result name="assignment">/view/jsp/pages/assignmentTable.jsp</result>
+	</action>
+	<action name="updateDepartment" class="com.slms.webapp.controller.OrganizationAction" method="updateDepartment">
+		<result name="success">/view/jsp/pages/departmentTable.jsp</result>
+	</action>
+	<action name="updateGroup" class="com.slms.webapp.controller.OrganizationAction" method="updateGroup">
+		<result name="success">/view/jsp/pages/groupTable.jsp</result>
+	</action>
+	<action name="updateOrg" class="com.slms.webapp.controller.OrganizationAction" method="updateOrg">
+		<result name="success" type="tiles">/organizationManagement</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="deleteParameter" class="com.slms.webapp.controller.OrganizationAction" method="deleteParameter">
+		<result name="success">/view/jsp/pages/reviewParameterTable.jsp</result>
+	</action>
+	<action name="changePassword" class="com.slms.webapp.controller.AdminAction" method="changePassword">
+		<result name="success" type="tiles">/changePassword</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="updatePassword" class="com.slms.webapp.controller.AdminAction" method="updatePassword">
+		<result name="success" type="tiles">/profile</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="profile" class="com.slms.webapp.controller.AdminAction" method="profile">
+		<result name="success" type="tiles">/profile</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="editProfile" class="com.slms.webapp.controller.AdminAction" method="editProfile">
+		<result name="success" type="tiles">/editProfile</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="updateProfile" class="com.slms.webapp.controller.AdminAction" method="updateProfile">
+		<result name="success" type="tiles">/profile</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+	<action name="updateResource" class="com.slms.webapp.controller.CoursesAction" method="updateResource">
+		<!-- <result name="success" type="tiles">/module</result> -->
+			<result name="success" type="redirectAction">
+			<param name="actionName">courseManagement</param>
+		</result>
+		<result name="login" type="redirectAction">
+			<param name="actionName">login</param>
+		</result>
+	</action>
+</package>
+</struts>    

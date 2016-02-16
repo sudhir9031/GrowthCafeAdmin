@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+ 
+<tiles-definitions>
+ 
+  <definition name="AdminLayout" template="/view/jsp/common/AdminLayout.jsp">
+   		<put-attribute name="title" value="Admin" /> 
+      <put-attribute name="header" value="/view/jsp/common/header.jsp"/>
+      <put-attribute name="leftMenu"   value="/view/jsp/common/leftMenu.jsp"/>
+      <put-attribute name="pageContent"   value=""/>
+  </definition>  
+  
+    <definition name="/dashboard" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/dashboard.jsp"/>
+  </definition>
+  
+  
+  
+   <definition name="/courseManagement" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/courseManagement.jsp"/>
+  </definition>
+  <definition name="/assignment" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/assignment.jsp"/>
+  </definition>
+  <definition name="/module" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/module.jsp"/>
+  </definition>
+  
+  
+  <definition name="/organizationManagement" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/organization.jsp"/>
+  </definition>
+  <definition name="/departmentManagement" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/department.jsp"/>
+  </definition>
+  <definition name="/groupManagement" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/group.jsp"/>
+  </definition>
+  <definition name="/reviewParameter" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/reviewParameter.jsp"/>
+  </definition>
+   <definition name="/grade" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/grade.jsp"/>
+  </definition>
+  <definition name="/teacherManagment" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/teacherManagment.jsp"/>
+  </definition>
+   <definition name="/students" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/student.jsp"/>
+  </definition>
+  <definition name="/mapStudent" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/mapStudent.jsp"/>
+  </definition>
+  <definition name="/newRegistration" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/newRegistration.jsp"/>
+  </definition>
+  <definition name="/sessionRequest" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/courseRequest.jsp"/>
+  </definition>
+  <definition name="/admin" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/admin.jsp"/>
+  </definition>
+   <definition name="/changePassword" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/changePassword.jsp"/>
+       <put-attribute name="leftMenu"   value="/view/jsp/common/profileLeftMenu.jsp"/>
+  </definition>
+    <definition name="/profile" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/profile.jsp"/>
+       <put-attribute name="leftMenu"   value="/view/jsp/common/profileLeftMenu.jsp"/>
+  </definition>
+  <definition name="/editProfile" extends="AdminLayout">
+      <put-attribute name="pageContent"   value="/view/jsp/pages/editProfile.jsp"/>
+       <put-attribute name="leftMenu"   value="/view/jsp/common/profileLeftMenu.jsp"/>
+  </definition>
+ 
+</tiles-definitions>
